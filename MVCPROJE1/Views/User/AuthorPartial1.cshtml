@@ -1,0 +1,148 @@
+﻿@model IEnumerable<EntityLayer.Concrete.Author>
+
+    <div class="card" >
+        
+            <div class="card-header">
+               
+                <div class="w-100">
+                    <h3 class="card-title font-weight-bolder">Yazar Profil Bilgileri</h3>
+                  
+
+                    <div class="card-tools">
+                       
+
+                        <div class="tab-pane" id="settings">
+                           
+
+                            @using (Html.BeginForm("UpdateUserProfile", "User", FormMethod.Post))
+                            {
+
+                                foreach (var item in Model)
+                                {
+
+                            <form class="form-text">
+                                <div class="form-group row">
+
+
+
+
+
+                                    <div class="form-group row">
+                                        <div class="col-12">
+                                            <label for="id" class="col-sm-4 col-form-label"></label>
+
+                                            <input type="hidden" class="form-control" name="AuthorID" value="@item.AuthorID">
+
+                                        </div>
+
+                                    </div>
+                                </div>
+                              
+                                <div class="form-group row">
+
+                                    <label for="inputName2" class="col-sm-4 col-form-label">İsim</label>
+
+                                    <div class="col-12">
+
+                                        <input type="text" class="form-control" name="AuthorName" value="@item.AuthorName">
+
+                                    </div>
+
+                                </div>
+
+                                <div class="form-group row">
+
+                                    <label for="inputEmail" class="col-sm-4 col-form-label">Mail Adresi</label>
+
+                                    <div class="col-12">
+
+                                        <input type="email" class="form-control" name="Mail" value="@item.Mail">
+
+                                    </div>
+
+                                </div>
+
+                                <div class="form-group row">
+
+                                    <label for="inputName2" class="col-sm-4 col-form-label">Fotoğraf</label>
+
+                                    <div class="col-12">
+
+                                        <input type="text" class="form-control" name="AuthorImage" value="@item.AuthorImage">
+
+                                    </div>
+
+                                </div>
+                                <div class="form-group row">
+
+                                    <label for="inputName2" class="col-sm-4 col-form-label">Hakkımda</label>
+
+                                    <div class="col-sm-12">
+
+                                        <input type="text" class="form-control" name="AuthorAbout" value="@item.AuthorAbout">
+
+                                    </div>
+
+                                </div>
+
+                                <div class="form-group row">
+
+                                    <label for="inputSkills" class="col-sm-4 col-form-label">Meslek</label>
+
+                                    <div class="col-sm-12">
+
+                                        <input type="text" class="form-control" name="AuthorTitle" value="@item.AuthorTitle">
+
+                                    </div>
+
+                                </div>
+
+                                <div class="form-group row">
+
+                                    <label for="inputSkills" class="col-sm-4 col-form-label">Hobiler</label>
+
+                                    <div class="col-sm-12">
+
+                                        <input type="text" class="form-control" name="AuthorShort" value="@item.AuthorShort">
+
+                                    </div>
+
+                                </div>
+
+                                <div class="form-group row">
+
+                                    <label for="inputSkills" class="col-sm-4 col-form-label">Şifre</label>
+
+                                    <div class="col-sm-12">
+
+                                        <input type="text" class="form-control" name="Password" value="@item.Password">
+
+                                    </div>
+
+                                </div>
+
+
+
+
+                                <div class="form-group row">
+
+                                    <div class="offset-sm-4 col-sm-10">
+
+                                        <button type="submit" class="btn btn-danger">Bilgilerimi Kaydet</button>
+
+                                    </div>
+
+
+                                </div>
+
+
+                            </form>
+                                }
+
+                            }
+                        </div>
+                    </div>
+                </div>
+        </div>
+</div>
+

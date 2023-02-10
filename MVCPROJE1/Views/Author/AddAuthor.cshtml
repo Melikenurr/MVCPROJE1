@@ -1,0 +1,58 @@
+﻿@model EntityLayer.Concrete.Author
+@{
+    ViewBag.Title = "AddAuthor";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+
+<div class="col-md-12">
+    <div class="card">
+        <div class="card-header">
+            <h3 class="card-title">Yazar Ekle</h3>
+
+            <div class="card-tools">
+                <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip" title="Collapse">
+                    <i class="fas fa-minus"></i>
+                </button>
+            </div>
+        </div>
+        <div class="card-body">
+
+            @using (Html.BeginForm("AddAuthor", "Author", FormMethod.Post, new { enctype = "multipart/form-data" }))
+            {
+
+                @Html.Label("Yazar Adı")
+
+                @Html.TextBoxFor(x => x.AuthorName, new { @class = "form-control" })
+
+                <p>Resim Ekleyin:</p>
+                <input type="file" name="BlogImage" />
+                @*<input type="submit" value="Kaydet" />*@
+
+
+                @Html.Label("Meslek")
+                @Html.TextBoxFor(x => x.AuthorTitle, new { @class = "form-control" })
+
+                @Html.Label("İlgi Alanları")
+                @Html.TextBoxFor(x => x.AuthorShort, new { @class = "form-control" })
+
+                @Html.Label("Hakkında")
+                @Html.TextBoxFor(x => x.AuthorAbout, new { @class = "form-control" })
+
+
+                @Html.Label("Mail")
+                @Html.TextBoxFor(x => x.Mail, new { @class = "form-control" })
+
+                @Html.Label("Password")
+                @Html.TextBoxFor(x => x.Password, new { @class = "form-control" })
+
+                @*<a href="/Blog/AdminBlogList" class="btn btn-outline-info">Ekle</a>*@
+                <button type="submit" class="btn btn-primary">Ekle</button>
+
+            }
+        </div>
+        <!-- /.card-body -->
+    </div>
+    <!-- /.card -->
+</div>

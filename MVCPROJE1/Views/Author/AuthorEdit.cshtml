@@ -1,0 +1,71 @@
+﻿
+@model EntityLayer.Concrete.Author
+@{
+    ViewBag.Title = "AuthorEdit";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="col-md-12">
+    <div class="card">
+        <div class="card-header">
+            <h3 class="card-title">Yazar Güncelle</h3>
+
+            <div class="card-tools">
+                <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip" title="Collapse">
+                    <i class="fas fa-minus"></i>
+                </button>
+            </div>
+        </div>
+        <div class="card-body">
+            <form class="form-group" method="post">
+
+
+                <div class="form-group">
+                    @Html.Label("Yazar ID")
+
+                    @Html.TextBoxFor(x => x.AuthorID, new { @style = "form-control" })
+                </div>
+
+                <div class="form-group">
+                    @Html.Label("Yazar Adı")
+
+                    @Html.TextBoxFor(x => x.AuthorName, new { @class = "form-control" })
+                </div>
+               
+                @Html.Label("Resim Yolu")
+                @Html.TextBoxFor(x => x.AuthorImage, new { @class = "form-control" })
+
+                @Html.Label("Meslek")
+                @Html.TextBoxFor(x => x.AuthorTitle, new { @class = "form-control" })
+
+                @Html.Label("İlgi Alanları")
+                @Html.TextBoxFor(x => x.AuthorShort, new { @class = "form-control" })
+
+               
+                @Html.Label("Hakkında")
+                @Html.TextBoxFor(x => x.AuthorAbout, new { @class = "form-control" })
+
+
+              
+                @Html.Label("Mail")
+                @Html.TextBoxFor(x => x.Mail, new { @class = "form-control" })
+             
+                @Html.Label("Password")
+                @Html.TextBoxFor(x => x.Password, new { @class = "form-control" })
+
+                <br />
+                <br />
+
+                @*<a href="/Blog/AdminBlogList" class="btn btn-outline-info">Ekle</a>*@
+                <button type="submit" class="btn btn-primary">Güncelle</button>
+
+            </form>
+            <div />
+            <!-- /.card-body -->
+            <!-- /.card -->
+        </div>
+    </div>
+</div>
+
+
+
